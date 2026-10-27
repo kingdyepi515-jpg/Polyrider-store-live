@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PolyRider — monthly Chrome extension license</title>
+<meta name="description" content="PolyRider Chrome extension license, $10.99 per month.">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+#bitcoin-payment[hidden] { display: none !important; }
+#bitcoin-payment { display: block; margin-top: 24px; text-align: center; }
+#bitcoin-payment img {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  margin: 16px auto;
+}
+#payment-status { margin-top: 12px; }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/"><span class="dot"></span>PolyRider</a>
+    <nav>
+      <a href="#how" class="opt">How it works</a>
+      <a href="/install.html">Install</a>
+      <a href="/download.html">Download</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <span class="pill">Chrome extension · Polymarket US</span>
+      <h1>Set your bet and goal.<br><span class="g">PolyRider places it for you.</span></h1>
+      <p class="lead">PolyRider watches Bitcoin Up or Down 5-minute markets on Polymarket US and places bets according to your settings.</p>
+      <p class="small">Works in Google Chrome on Windows and Mac. You stay logged in to your own Polymarket account; PolyRider never sees your password.</p>
+    </div>
+
+    <div class="card buy" id="buy">
+      <div class="price">
+        <span data-price>$10.99</span>
+        <small>monthly · paid with Bitcoin on Cash App</small>
+      </div>
+
+      <ul>
+        <li>One license for one computer</li>
+        <li>Updates included</li>
+        <li>License key and download sent by email after payment approval</li>
+      </ul>
+
+      <form id="orderForm" action="/" method="get" novalidate>
+        <label for="email">Your email address</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          inputmode="email"
+          autocomplete="email"
+          placeholder="you@example.com"
+          required
+        >
+
+        <p class="small" style="margin:6px 0 14px">
+          We send your order link and license key here.
+        </p>
+
+        <button class="btn btn-g full" id="buyBtn" type="submit">
+          Continue to Bitcoin payment
+        </button>
+
+        <div class="err" id="err" role="alert"></div>
+      </form>
+
+      <div id="bitcoin-payment" hidden>
+        <h3>Pay <span data-price>$10.99</span> with Bitcoin</h3>
+        <p class="small ok" id="order-created" role="status"></p>
+        <ol class="small" style="text-align:left;max-width:340px;margin:12px auto;padding-left:20px">
+          <li>Open Cash App and choose its Bitcoin scanning option.</li>
+          <li>Scan the QR code below. Confirm the receiver and send <b data-price>$10.99</b> in Bitcoin.</li>
+          <li>Keep your transaction confirmation.</li>
+        </ol>
+
+        <div style="background:#fff;padding:12px;border-radius:12px;max-width:304px;margin:16px auto">
+          <img id="bitcoin-qr" src="/IMG_8282.jpg" alt="Bitcoin receiving QR code">
+        </div>
+
+        <p class="small">Before sending, verify the receiving address, Bitcoin network, and amount in Cash App.</p>
+        <p class="small">Payment is checked manually by the seller. Your license is issued only after the payment is verified; nothing is confirmed automatically.</p>
+        <p><a class="btn btn-o full" id="order-link" href="/order.html">Open my order page</a></p>
+        <p id="payment-status" class="small" role="status"></p>
+      </div>
+
+      <p class="small" style="margin:12px 0 0">
+        Already paid?
+        <a href="/download.html">Get your download</a> ·
+        <a href="/download.html#lost">Find my order</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <h2>What it does</h2>
+    <div class="grid3">
+      <div class="card feat">
+        <h3>Three simple settings</h3>
+        <p>Bet amount, goal in cents, and when to start betting.</p>
+      </div>
+      <div class="card feat">
+        <h3>Picks a side</h3>
+        <p>Uses your configured rules to select a side. Results are not guaranteed.</p>
+      </div>
+      <div class="card feat">
+        <h3>Hands-free</h3>
+        <p>Automates supported actions according to your settings.</p>
+      </div>
+      <div class="card feat">
+        <h3>Tracks results</h3>
+        <p>Displays wins, losses, and session results when supported by the extension.</p>
+      </div>
+      <div class="card feat">
+        <h3>Limits repeated bets</h3>
+        <p>Uses the extension's configured safeguards.</p>
+      </div>
+      <div class="card feat">
+        <h3>Auto ON / OFF</h3>
+        <p>Control automation using the extension's available controls.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>How buying works</h2>
+    <ol class="steps">
+      <li>Enter your email and click Continue to Bitcoin payment.</li>
+      <li>Scan the displayed QR code and verify the payment details before sending Bitcoin.</li>
+      <li>The seller manually verifies payment before issuing a license.</li>
+      <li>Use your email and license key to access your download and follow the <a href="/install.html">installation guide</a>.</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>Good to know</h2>
+    <div class="warn">
+      Trading on prediction markets is risky and you can lose money. The extension does not guarantee profit. Check that automated tools are permitted for your account and location.
+    </div>
+    <p class="small" style="margin-top:14px">
+      Questions or problems? Email <span data-support>the seller</span>.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © PolyRider · Not affiliated with Polymarket. ·
+    <a href="/install.html">Install guide</a> ·
+    <a href="/download.html">Download</a>
+  </div>
+</footer>
+
+<script src="/js/common.js"></script>
+<script src="/js/index.js"></script>
+</body>
+</html>

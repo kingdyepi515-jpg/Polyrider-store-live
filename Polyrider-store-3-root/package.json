@@ -1,0 +1,27 @@
+{
+  "name": "polyrider-store",
+  "version": "1.0.0",
+  "description": "PolyRider BTC 5m sales site, Bitcoin orders, licensing and admin panel",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node tests/run.js && node tests/extension.js && node tests/pages.js",
+    "build-release": "node scripts/build-release.js"
+  },
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@libsql/client": "^0.18.0",
+    "adm-zip": "^0.6.1",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.22.3",
+    "helmet": "^8.3.0",
+    "qrcode": "^1.5.4"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0"
+  }
+}

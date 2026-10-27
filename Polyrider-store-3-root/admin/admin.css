@@ -1,0 +1,42 @@
+.wide{max-width:1400px}
+.narrowbox{max-width:420px;margin:40px auto}
+nav a.on{color:var(--text);font-weight:700}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 14px;min-width:120px;cursor:pointer}
+.stat b{display:block;font-size:22px}
+.stat span{color:var(--muted);font-size:12px}
+.stat.hot{border-color:var(--amber)}
+.toolbar{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.toolbar input{flex:1;min-width:220px}
+.toolbar select{width:auto}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+.tbl{width:100%;border-collapse:collapse;font-size:13.5px;white-space:nowrap}
+.tbl th,.tbl td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.tbl th{background:var(--bg2);color:var(--muted);font-weight:600;position:sticky;top:0}
+.tbl th[data-sort]{cursor:pointer}
+.tbl th.asc::after{content:" ▲"}.tbl th.desc::after{content:" ▼"}
+.tbl tbody tr{cursor:pointer}
+.tbl tbody tr:hover{background:#18202c}
+.tbl td.wrap{white-space:normal;max-width:420px}
+.tag{display:inline-block;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:700;background:#263042;color:#cdd6e3}
+.t-awaiting_payment{background:#3a3220;color:#f5d38a}
+.t-payment_detected{background:#1f3048;color:#9cc8ff}
+.t-payment_confirmed{background:#163b28;color:#7ee2a6}
+.t-requires_review{background:#4a2a12;color:#ffbe85}
+.t-approved,.t-active{background:#14532d;color:#bbf7d0}
+.t-expired,.t-rejected{background:#2b2f37;color:#9aa3b1}
+.t-suspended{background:#4a3a10;color:#fde68a}
+.t-revoked{background:#5b1a1a;color:#fecaca}
+.drawer{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:20;display:flex;justify-content:flex-end}
+.drawer-in{width:min(640px,100%);height:100%;overflow:auto;background:var(--bg);border-left:1px solid var(--line);padding:20px}
+.drawer .close{float:right;padding:8px 12px;font-size:14px}
+.drawer h2{margin:0 0 4px;font-size:22px}
+.drawer h3{margin:22px 0 8px;font-size:16px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.actions .btn{padding:9px 13px;font-size:14px}
+.timeline{list-style:none;padding:0;margin:0;font-size:13.5px}
+.timeline li{padding:6px 0;border-bottom:1px dashed var(--line)}
+.timeline .when{color:var(--muted);font-family:var(--mono);font-size:12px}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:500;margin:10px 0}
+.check input{margin-top:5px;width:18px;height:18px}
+.keybox{font-family:var(--mono);font-size:18px;font-weight:700;background:var(--bg2);border:1px solid var(--line);border-radius:8px;padding:10px;letter-spacing:1px}

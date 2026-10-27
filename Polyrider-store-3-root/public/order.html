@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>Your order — PolyRider BTC 5m</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>PolyRider BTC 5m</a>
+  <nav><a href="/install.html">Install</a><a href="/download.html">Download</a></nav>
+</div></header>
+
+<main class="wrap narrow" style="padding-top:28px;padding-bottom:40px">
+  <p id="loading" class="small">Loading your order…</p>
+
+  <div id="notFound" class="card hide">
+    <h1 style="margin-top:0;font-size:24px">Order not found</h1>
+    <p id="nfMsg" class="small">We couldn't find that order. Use the link from your email, or recover it below.</p>
+    <p><a class="btn btn-o" href="/download.html#lost">Find my order</a></p>
+  </div>
+
+  <div id="app" class="card hide">
+    <h1 style="margin-top:0;font-size:24px">Your order <span class="mono" id="oid"></span></h1>
+    <p class="small">For <b id="oemail"></b> · Bookmark this page to check your order any time.</p>
+
+    <div class="status" id="status"><span class="lamp"></span><span id="statusText"></span></div>
+    <p id="statusHelp" class="small"></p>
+    <div id="note" class="note hide"></div>
+
+    <div id="payBox" class="hide">
+      <div class="pay">
+        <div class="qr" id="qr"></div>
+        <div>
+          <p class="big" style="margin:0 0 6px">Pay <span id="btc1"></span> in Bitcoin</p>
+          <dl class="kv">
+            <dt>Amount</dt><dd>$<span id="usd"></span> USD</dd>
+            <dt>Method</dt><dd>Cash App · Bitcoin</dd>
+          </dl>
+          <p class="small">Cash App → Bitcoin → Scan, then send exactly <b id="btc2"></b>. Check the receiver and amount before confirming.</p>
+          <div class="copy"><code id="addr"></code></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <button class="btn btn-o" id="cpAmt" type="button">Copy amount</button>
+            <button class="btn btn-o" id="cpAddr" type="button">Open Cash App link</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="txBox" class="hide"></div>
+
+    <div id="doneBox" class="hide note" style="margin-top:14px">
+      <b>Payment approved.</b> Your license key and download link were issued for <span id="doneEmail"></span>.
+      Check your email, then <a href="/download.html">get your download</a>.
+    </div>
+
+    <p style="margin-top:16px"><button class="btn btn-o" id="checkBtn" type="button">Refresh payment status</button></p>
+    <p class="small">Payment is verified manually by the seller, so approval can take some time. Nothing here is confirmed automatically.</p>
+  </div>
+
+  <p class="small" style="margin-top:16px">Need help? Email <span data-support>the seller</span>.</p>
+</main>
+<script src="/js/common.js"></script>
+<script src="/js/order.js"></script>
+</body>
+</html>

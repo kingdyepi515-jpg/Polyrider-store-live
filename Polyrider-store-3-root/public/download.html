@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Download — PolyRider BTC 5m</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>PolyRider BTC 5m</a>
+  <nav><a href="/install.html">Install</a><a href="/#buy">Buy</a></nav>
+</div></header>
+
+<main class="wrap narrow" style="padding-top:28px;padding-bottom:40px">
+  <div class="card">
+    <h1 style="margin-top:0;font-size:26px">Download PolyRider <span class="small" data-version></span></h1>
+    <p class="small">Only for approved purchases. Enter the email you ordered with and the license key from your email.</p>
+    <form id="dlForm" novalidate>
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="email" required>
+      <label for="key">License key</label>
+      <input id="key" type="text" class="mono" placeholder="PR-XXXX-XXXX-XXXX-XXXX" autocomplete="off" spellcheck="false" maxlength="30">
+      <button class="btn btn-g full" id="dlBtn" type="submit" style="margin-top:14px">Get my download</button>
+      <div class="err" id="err" role="alert"></div>
+    </form>
+    <div id="ready" class="hide">
+      <p class="ok" style="font-weight:700">Your download is ready.</p>
+      <p><a class="btn btn-g full" id="dlLink" href="#">Download PolyRider (ZIP)</a></p>
+      <p class="small">This link works for 10 minutes. If it expires, just press "Get my download" again.</p>
+      <div class="note"><b>Downloading is not installing.</b> After the ZIP downloads you must <b>unzip it</b> and load the folder in Chrome — follow the <a href="/install.html">Windows or Mac install steps</a>. The extension then activates with your license key on this one computer.</div>
+      <p class="small" id="relNotes"></p>
+    </div>
+  </div>
+
+  <div class="card" id="lost" style="margin-top:16px">
+    <h2 style="margin-top:0;font-size:20px">I lost my key / can't find my order</h2>
+    <p class="small">Enter the email you used. If it has orders with us, we'll email you the order links and license keys (only to that address — never on this screen).</p>
+    <form id="recForm" novalidate>
+      <input id="recEmail" type="email" autocomplete="email" placeholder="you@example.com">
+      <button class="btn btn-o full" id="recBtn" type="submit" style="margin-top:10px">Email me my orders</button>
+      <div class="err" id="recErr" role="alert"></div>
+      <p class="ok hide" id="recOk"></p>
+    </form>
+  </div>
+  <p class="small" style="margin-top:16px">Need help? Email <span data-support>the seller</span>.</p>
+</main>
+<script src="/js/common.js"></script>
+<script src="/js/download.js"></script>
+</body>
+</html>

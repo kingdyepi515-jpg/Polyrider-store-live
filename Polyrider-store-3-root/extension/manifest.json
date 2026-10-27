@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "PolyRider BTC 5m",
+  "version": "4.3.0",
+  "description": "Simple goal trader for Polymarket US BTC Up or Down 5m: set bet $ and goal in cents, it bets by itself in the last 2 minutes.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://polymarket.us/*",
+    "https://web.polymarket.us/*",
+    "__POLYRIDER_SERVER__/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://polymarket.us/*"
+      ],
+      "js": [
+        "gate.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "license.js"
+  }
+}

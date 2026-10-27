@@ -1,0 +1,34 @@
+
+services:
+  - type: web
+    name: polyrider-store
+    runtime: node
+    plan: free
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SERVER_SECRET
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: DATABASE_AUTH_TOKEN
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: CASH_APP_TAG
+        sync: false
+      - key: SUPPORT_EMAIL
+        sync: false
+      - key: BREVO_API_KEY
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: PRICE_USD
+        value: "10.99"
+      - key: CONFIRMATIONS_REQUIRED
+        value: "1"

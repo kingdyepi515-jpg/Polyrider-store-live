@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Install — PolyRider BTC 5m</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="/"><span class="dot"></span>PolyRider BTC 5m</a>
+  <nav><a href="/download.html">Download</a><a href="/#buy">Buy</a></nav>
+</div></header>
+
+<main class="wrap narrow" style="padding-top:28px;padding-bottom:40px">
+  <h1 style="font-size:28px;margin-top:0">Install PolyRider in Chrome</h1>
+  <p class="small">You need Google Chrome on a Windows PC or a Mac, the PolyRider ZIP from the <a href="/download.html">download page</a>, and your license key. Phones and tablets can't run Chrome extensions.</p>
+  <div class="warn">A ZIP file can't be installed by clicking it. You first <b>unzip (extract)</b> it, then point Chrome at the folder inside that has <b>manifest.json</b>.</div>
+
+  <div class="tabs" style="margin-top:18px">
+    <button class="btn btn-o on" id="tWin" type="button">Windows</button>
+    <button class="btn btn-o" id="tMac" type="button">Mac</button>
+  </div>
+
+  <section id="win">
+    <ol class="steps">
+      <li><b>Download</b> the ZIP from the download page. It goes to your <b>Downloads</b> folder.</li>
+      <li><b>Extract it:</b> right-click the ZIP → <b>Extract All…</b> → <b>Extract</b>. You get a folder named like <span class="mono">PolyRider-BTC-5m-v4.3.0</span>.</li>
+      <li><b>Move that folder somewhere permanent</b>, e.g. <span class="mono">Documents</span>. Chrome runs PolyRider from this folder, so don't delete or rename it later.</li>
+      <li>Open <b>Chrome</b>, type <span class="mono">chrome://extensions</span> in the address bar and press <b>Enter</b>.</li>
+      <li>Turn on <b>Developer mode</b> (switch in the top-right corner).</li>
+      <li>Click <b>Load unpacked</b> and select the PolyRider folder — the one that has <span class="mono">manifest.json</span> directly inside it — then click <b>Select Folder</b>.</li>
+      <li>Optional: click the puzzle-piece icon in Chrome's toolbar and the pin next to <b>PolyRider BTC 5m</b> to keep it visible.</li>
+      <li>Open <a href="https://polymarket.us" rel="noopener">polymarket.us</a>, log in, and press <b>F5</b> to refresh. The PolyRider panel appears bottom-left. Enter your license key if it asks, then press <b>Activate</b>.</li>
+    </ol>
+  </section>
+
+  <section id="mac" class="hide">
+    <ol class="steps">
+      <li><b>Download</b> the ZIP from the download page. It goes to your <b>Downloads</b> folder.</li>
+      <li><b>Extract it:</b> double-click the ZIP in Finder. macOS creates a folder named like <span class="mono">PolyRider-BTC-5m-v4.3.0</span>.</li>
+      <li><b>Move that folder somewhere permanent</b>, e.g. <span class="mono">Documents</span>. Chrome runs PolyRider from this folder, so don't delete or rename it later.</li>
+      <li>Open <b>Chrome</b>, type <span class="mono">chrome://extensions</span> in the address bar and press <b>Return</b>.</li>
+      <li>Turn on <b>Developer mode</b> (switch in the top-right corner).</li>
+      <li>Click <b>Load unpacked</b>, go to the PolyRider folder — the one that has <span class="mono">manifest.json</span> directly inside it — and click <b>Select</b>.</li>
+      <li>Optional: click the puzzle-piece icon in Chrome's toolbar and the pin next to <b>PolyRider BTC 5m</b> to keep it visible.</li>
+      <li>Open <a href="https://polymarket.us" rel="noopener">polymarket.us</a>, log in, and press <b>⌘ + R</b> to refresh. The PolyRider panel appears bottom-left. Enter your license key if it asks, then press <b>Activate</b>.</li>
+    </ol>
+  </section>
+
+  <div class="card" style="margin-top:20px">
+    <h2 style="margin-top:0;font-size:19px">Updating to a new version</h2>
+    <p>When a new version is out, PolyRider shows a green "update available" note on polymarket.us. Updates are <b>not</b> installed automatically:</p>
+    <ol class="steps">
+      <li>Download the new ZIP from the <a href="/download.html">download page</a> (same email + key) and extract it.</li>
+      <li>Copy the new files <b>into your existing PolyRider folder</b>, replacing the old ones. (Keeping the same folder keeps your settings and license.)</li>
+      <li>On <span class="mono">chrome://extensions</span>, click the round <b>reload ⟳</b> arrow on the PolyRider card, then refresh polymarket.us.</li>
+    </ol>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h2 style="margin-top:0;font-size:19px">Troubleshooting</h2>
+    <ul>
+      <li><b>"Manifest file is missing"</b> — you picked the wrong folder. Choose the folder that has <span class="mono">manifest.json</span> directly inside (not the ZIP, and not a folder above it).</li>
+      <li><b>No panel on polymarket.us</b> — make sure PolyRider is switched on in <span class="mono">chrome://extensions</span>, then refresh the page.</li>
+      <li><b>Chrome asks about developer-mode extensions</b> when it starts — you can keep PolyRider enabled. You never need to turn off antivirus or any Chrome security setting.</li>
+      <li><b>"Load unpacked" is missing or blocked</b> — your Chrome is managed by a school or company. Use a personal computer or personal Chrome profile.</li>
+      <li><b>"Active on another computer"</b> — one license works on one computer at a time. After a computer change it moves automatically after 24 hours, or email us to move it now.</li>
+      <li><b>First activation is slow</b> — the license server can take up to a minute to wake up. Just wait.</li>
+    </ul>
+    <p class="small">Still stuck? Email <span data-support>the seller</span> with your order number.</p>
+  </div>
+</main>
+<script src="/js/common.js"></script>
+<script src="/js/install.js"></script>
+</body>
+</html>

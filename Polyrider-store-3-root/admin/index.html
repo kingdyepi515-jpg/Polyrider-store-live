@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Admin — PolyRider BTC 5m</title>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/admin-assets/admin.css">
+</head>
+<body>
+<header class="top"><div class="wrap wide">
+  <span class="brand"><span class="dot"></span>PolyRider Admin</span>
+  <nav id="nav" class="hide">
+    <a href="#orders" data-tab="orders">Orders</a><a href="#versions" data-tab="versions">Versions</a><a href="#audit" data-tab="audit">Audit log</a><a href="#settings" data-tab="settings">Settings</a><a href="#" id="logout">Log out</a>
+  </nav>
+</div></header>
+
+<main class="wrap wide" style="padding-top:22px;padding-bottom:40px">
+  <!-- login -->
+  <div id="login" class="card narrowbox hide">
+    <h1 style="margin-top:0;font-size:22px">Admin login</h1>
+    <form id="loginForm" novalidate>
+      <label for="lEmail">Email</label><input id="lEmail" type="email" autocomplete="username">
+      <label for="lPw">Password</label><input id="lPw" type="password" autocomplete="current-password">
+      <button class="btn btn-g full" style="margin-top:14px" id="lBtn">Log in</button>
+    </form>
+    <form id="codeForm" class="hide" novalidate>
+      <p>We emailed a 6-digit code to your admin email.</p>
+      <label for="lCode">Code</label><input id="lCode" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6">
+      <button class="btn btn-g full" style="margin-top:14px">Confirm</button>
+    </form>
+    <div class="err" id="lErr" role="alert"></div>
+  </div>
+
+  <div id="banner" class="warn hide" style="margin-bottom:14px"></div>
+
+  <!-- orders -->
+  <section id="tab-orders" class="tab hide">
+    <div class="stats" id="stats"></div>
+    <div class="toolbar">
+      <input id="q" type="text" placeholder="Search email, order #, transaction, key ending…">
+      <select id="fStatus">
+        <option value="">All orders</option>
+        <option value="todo">Needs my attention</option>
+        <option value="awaiting_payment">Awaiting payment</option>
+        <option value="payment_detected">Payment detected</option>
+        <option value="payment_confirmed">Payment confirmed</option>
+        <option value="requires_review">Requires review</option>
+        <option value="approved">Approved</option>
+        <option value="expired">Expired</option>
+        <option value="rejected">Rejected</option>
+        <option value="lic_suspended">License suspended</option>
+        <option value="lic_revoked">License revoked</option>
+      </select>
+      <button class="btn btn-o" id="reload" type="button">Refresh</button>
+    </div>
+    <div class="tablewrap">
+      <table class="tbl" id="ordersTbl">
+        <thead><tr>
+          <th data-sort="created_at">Date</th><th data-sort="id">Order</th><th data-sort="email">Email</th><th data-sort="usd">Amount</th>
+          <th>Method</th><th>Transaction</th><th data-sort="status">Payment</th><th data-sort="license_status">License</th>
+          <th data-sort="activated_at">Activation</th><th data-sort="last_version">Version</th><th data-sort="last_seen_at">Last activity</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="small" id="ordersCount"></p>
+  </section>
+
+  <!-- versions -->
+  <section id="tab-versions" class="tab hide">
+    <div class="card">
+      <h2 style="margin-top:0">Publish a new version</h2>
+      <p class="small">Upload the ZIP of the licensed extension folder (manifest.json, gate.js, license.js, content.js). The version number in manifest.json must be higher than the last one. Download a test copy and try it before making it current.</p>
+      <form id="relForm" novalidate>
+        <label for="relFile">Extension ZIP</label><input id="relFile" type="file" accept=".zip,application/zip">
+        <label for="relNotes">Release notes (customers see these)</label><textarea id="relNotes" rows="3" maxlength="2000"></textarea>
+        <label class="check"><input type="checkbox" id="relCurrent"> Make it the current version right away</label>
+        <button class="btn btn-g" style="margin-top:10px">Upload</button>
+        <div class="err" id="relErr"></div>
+      </form>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h2 style="margin-top:0">Versions</h2>
+      <div class="tablewrap"><table class="tbl" id="relTbl"><thead><tr><th>Version</th><th>Uploaded</th><th>Notes</th><th>Status</th><th>Customers on it</th><th>Actions</th></tr></thead><tbody></tbody></table></div>
+      <p class="small">Customers install by hand (unpacked), so a new current version is offered on the download page and announced inside PolyRider — it is not pushed to their computers automatically. "Withdraw" removes a bad version from downloads and switches back to the previous one.</p>
+    </div>
+  </section>
+
+  <!-- audit -->
+  <section id="tab-audit" class="tab hide">
+    <div class="card">
+      <h2 style="margin-top:0">Audit log</h2>
+      <input id="aq" type="text" placeholder="Filter…" style="margin-bottom:10px">
+      <div class="tablewrap"><table class="tbl" id="auditTbl"><thead><tr><th>When</th><th>Who</th><th>What</th><th>Order</th><th>Details</th></tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <!-- settings -->
+  <section id="tab-settings" class="tab hide">
+    <div class="card">
+      <h2 style="margin-top:0">Bitcoin receiving address</h2>
+      <p class="small">Copy it from Cash App: Money tab → Bitcoin → Receive (or Deposit bitcoin) → copy the address. Cash App may show you a new address after you receive a payment — older addresses keep working, but you can paste the new one here any time. New orders use the address saved here; existing orders keep the one they showed.</p>
+      <div class="copy"><input id="sAddr" type="text" class="mono" spellcheck="false"><button class="btn btn-g" id="sAddrSave" type="button">Save</button></div>
+      <div class="err" id="sAddrErr"></div>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h2 style="margin-top:0">Store switches</h2>
+      <label class="check"><input type="checkbox" id="sOpen"> Sales open (people can create new orders)</label>
+      <label class="check"><input type="checkbox" id="sAuto"> Auto-approve payments once confirmed on the blockchain (off = nothing is issued until you press Approve)</label>
+      <p class="small">Required confirmations: <b id="sConf"></b> (set CONFIRMATIONS_REQUIRED in hosting settings to change).</p>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h2 style="margin-top:0">Email</h2>
+      <p id="sEmail"></p>
+      <button class="btn btn-o" id="sRetry" type="button">Retry failed emails</button>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h2 style="margin-top:0">Change admin password</h2>
+      <form id="pwForm" novalidate>
+        <label>Current password</label><input type="password" id="pwCur" autocomplete="current-password">
+        <label>New password (12+ characters)</label><input type="password" id="pwNew" autocomplete="new-password">
+        <button class="btn btn-o" style="margin-top:10px">Change password</button>
+        <div class="err" id="pwErr"></div>
+      </form>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h2 style="margin-top:0">Backup</h2>
+      <p class="small">Download a copy of all orders, licenses and history. Do this weekly and keep it somewhere safe (it contains customer emails). Release ZIPs aren't included — keep your own copies.</p>
+      <a class="btn btn-o" href="/api/admin/backup">Download backup</a>
+    </div>
+  </section>
+</main>
+
+<!-- order drawer -->
+<div id="drawer" class="drawer hide" role="dialog" aria-modal="true">
+  <div class="drawer-in">
+    <button class="btn btn-o close" id="dClose" type="button">Close ✕</button>
+    <div id="dBody"></div>
+  </div>
+</div>
+<script src="/admin-assets/admin.js"></script>
+</body>
+</html>
